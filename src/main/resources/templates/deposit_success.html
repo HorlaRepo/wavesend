@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title style="font-family: 'Times New Roman', Times, serif;">Deposit Success</title>
+    <style>
+        /* Reset Styles */
+        body, h1, h2, h3, p {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        /* Email Container */
+        .email-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgb(242, 243, 242);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        /* Email Header */
+        .email-header {
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        .email-header h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        /* Email Content */
+        .email-content {
+            margin-bottom: 20px;
+            margin-top: 20px;
+            padding: 0 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        .email-content p {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        /* Email Footer */
+        .email-footer {
+            text-align: center;
+            padding-top: 15px;
+        }
+        .email-footer p {
+            color: #888;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<div class="email-container">
+    <div class="email-header">
+        <h1>Deposit Successful</h1>
+    </div>
+    <div class="email-content" style="font-family: 'Times New Roman', Times, serif;">
+        <p th:text="'Dear ' + ${username} + ','"></p>
+        <p th:text="'We are pleased to inform you that your deposit of $' + ${amount} + ' has been successfully processed and your wallet credited.'"></p>
+        <p style="margin-top: 20px; font-weight: bold;"><strong>Here are the details of the transaction:</strong></p>
+        <ul style="list-style-type: none; padding: 0; font-size: medium">
+            <li style="margin-bottom: 10px;"><strong>Transaction Amount:</strong> $<span th:text="${amount}"></span></li>
+            <li style="margin-bottom: 10px;"><strong>Transaction Date:</strong> <span th:text="${transactionDate}"></span></li>
+            <li style="margin-bottom: 10px;"><strong>Transaction Time:</strong> <span th:text="${transactionTime}"></span></li>
+            <li style="margin-bottom: 10px;"><strong>Transaction Reference:</strong> <span th:text="${referenceNumber}"></span></li>
+            <li style="margin-bottom: 10px;"><strong>SessionId:</strong> <span th:text="${sessionId}"></span></li>
+            <li style="margin-bottom: 10px;"><strong>Transaction Type:</strong> <span th:text="${transactionType}"></span></li>
+            <li style="margin-bottom: 10px;"><strong>Description:</strong> <span th:text="${description}"></span></li>
+            <li style="margin-bottom: 10px;"><strong>Status:</strong> <span th:text="${status}"></span></li>
+            <li style="margin-bottom: 10px;"><strong>WalletId:</strong> <span th:text="${walletId}"></span></li>
+        </ul>
+        <p style="margin-top: 20px;">Thank you for choosing our service.</p>
+    </div>
+    <div class="email-footer">
+        <p>Best regards,</p>
+        <p>WaveSend Team</p>
+    </div>
+</div>
+</body>
+</html>

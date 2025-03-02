@@ -1,0 +1,16 @@
+INSERT INTO mobile_money_options (name) VALUES
+        ('FMM'),
+        ('WAVE'),
+        ('AMOLEMONEY'),
+        ('AIRTEL'),
+        ('MTN'),
+        ('TIGO'),
+        ('VODAFONE'),
+        ('Airtel Kenya (MPX)'),
+        ('M-Pesa (MPS)'),
+        ('AIRTELMW'),
+        ('EMONEY'),
+        ('FREEMONEY'),
+        ('ORANGEMONEY'),
+        ('WAVE'),
+        ('MPS') ON CONFLICT DO NOTHING;
